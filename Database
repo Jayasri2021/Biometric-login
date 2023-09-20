@@ -3,10 +3,10 @@ CREATE TABLE user_data
   user_name varchar(50) NOT NULL,
   user_dob varchar(20) NOT NULL,
   user_age varchar(10) NOT NULL,
-  user_phnum varchar(250),
-  email_id varchar(250) NOT NULL,
-  user_address varchar(250) NOT NULL,
-  user_gender varchar(250) NOT NULL,
+  user_phnum varchar(25),
+  email_id varchar(90) NOT NULL,
+  user_address varchar(100) NOT NULL,
+  user_gender varchar(25) NOT NULL,
   user_template blob,
   PRIMARY KEY (user_id)
 );
