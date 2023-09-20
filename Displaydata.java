@@ -9,7 +9,7 @@ import java.sql.Blob;
 public class displaying_of_data extends JFrame {
     // Declare components
     private JLabel nameL, ageLabel, addrLabel, genderLabel;
-    private JTextField nameField, ageField, addrField, genderField;
+    private JTextField nameF, ageField, addrField, genderField;
 
     // private Blob temp;
     // Constructor
@@ -20,7 +20,7 @@ public class displaying_of_data extends JFrame {
         setResizable(false);
         // Initialize components
         nameL = new JLabel("Name:");
-        nameField = new JTextField(20);
+        nameF = new JTextField(20);
         ageLabel = new JLabel("Age:");
         ageField = new JTextField(3);
         addrLabel = new JLabel("Address:");
@@ -31,7 +31,7 @@ public class displaying_of_data extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(4, 2));
         panel.add(nameL);
-        panel.add(nameField);
+        panel.add(nameF);
         panel.add(ageLabel);
         panel.add(ageField);
         panel.add(addrLabel);
@@ -46,7 +46,7 @@ public class displaying_of_data extends JFrame {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM user_data WHERE user_id=1" + ";");
             if (rs.next()) {
-                nameField.setText(rs.getString("user_name"));
+                nameF.setText(rs.getString("user_name"));
                 ageField.setText(Integer.toString(rs.getInt("user_age")));
                 addrField.setText(rs.getString("user_address"));
                 genderField.setText(rs.getString("user_gender"));
