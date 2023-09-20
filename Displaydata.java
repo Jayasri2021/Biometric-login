@@ -8,7 +8,7 @@ import java.sql.Blob;
 @SuppressWarnings("serial")
 public class displaying_of_data extends JFrame {
     // Declare components
-    private JLabel nameL, ageLabel, addrLabel, genderLabel;
+    private JLabel nameL, ageL, addrLabel, genderLabel;
     private JTextField nameF, ageField, addrField, genderField;
 
     // private Blob temp;
@@ -21,7 +21,7 @@ public class displaying_of_data extends JFrame {
         // Initialize components
         nameL = new JLabel("Name:");
         nameF = new JTextField(20);
-        ageLabel = new JLabel("Age:");
+        ageL = new JLabel("Age:");
         ageField = new JTextField(3);
         addrLabel = new JLabel("Address:");
         addrField = new JTextField(20);
@@ -32,7 +32,7 @@ public class displaying_of_data extends JFrame {
         panel.setLayout(new GridLayout(4, 2));
         panel.add(nameL);
         panel.add(nameF);
-        panel.add(ageLabel);
+        panel.add(ageL);
         panel.add(ageField);
         panel.add(addrLabel);
         panel.add(addrField);
