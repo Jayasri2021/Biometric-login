@@ -49,7 +49,7 @@ public class displaying_of_data extends JFrame {
                 nameF.setText(rs.getString("user_name"));
                 ageF.setText(Integer.toString(rs.getInt("user_age")));
                 addrF.setText(rs.getString("user_address"));
-                genderField.setText(rs.getString("user_gender"));
+                genderF.setText(rs.getString("user_gender"));
             }
             con.close();
         } catch (Exception e) {
