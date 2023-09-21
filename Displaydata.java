@@ -9,7 +9,7 @@ import java.sql.Blob;
 public class displaying_of_data extends JFrame {
     // Declare components
     private JLabel nameL, ageL, addrL, genderL;
-    private JTextField nameF, ageF, addrField, genderField;
+    private JTextField nameF, ageF, addrF, genderField;
 
     // private Blob temp;
     // Constructor
@@ -24,7 +24,7 @@ public class displaying_of_data extends JFrame {
         ageL = new JLabel("Age:");
         ageF = new JTextField(3);
         addrL = new JLabel("Address:");
-        addrField = new JTextField(20);
+        addrF = new JTextField(20);
         genderL = new JLabel("Gender:");
         genderField = new JTextField(20);
         // Add components to frame
@@ -35,7 +35,7 @@ public class displaying_of_data extends JFrame {
         panel.add(ageL);
         panel.add(ageF);
         panel.add(addrL);
-        panel.add(addrField);
+        panel.add(addrF);
         panel.add(genderL);
         panel.add(genderField);
         add(panel, BorderLayout.CENTER);
@@ -48,7 +48,7 @@ public class displaying_of_data extends JFrame {
             if (rs.next()) {
                 nameF.setText(rs.getString("user_name"));
                 ageF.setText(Integer.toString(rs.getInt("user_age")));
-                addrField.setText(rs.getString("user_address"));
+                addrF.setText(rs.getString("user_address"));
                 genderField.setText(rs.getString("user_gender"));
             }
             con.close();
