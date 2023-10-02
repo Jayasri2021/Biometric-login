@@ -40,3 +40,26 @@ public class displaying_of_data extends JFrame {
         panel.add(genderF);
         add(panel, BorderLayout.CENTER);
         // Retrieve data from database
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fingerprint", "root", "123456");
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM user_data WHERE user_id=1" + ";");
+            if (rs.next()) {
+                nameF.setText(rs.getString("user_name"));
+                ageF.setText(Integer.toString(rs.getInt("user_age")));
+                addrF.setText(rs.getString("user_address"));
+                genderF.setText(rs.getString("user_gender"));
+            }
+            con.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        displaying_of_data form = new displaying_of_data();
+        form.setVisible(true);
+    }
+}
