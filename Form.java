@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
 public class Form extends MFS100Test {
     private static final long serialVersionUID = 1L;
     // initialize text fields
@@ -31,3 +32,15 @@ public class Form extends MFS100Test {
     private JButton ucapture;
     // private JButton uaddr1;
 
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    Form frame = new Form();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
